@@ -1,4 +1,4 @@
-cd == README
+README
 
 Hi! I'm Miguel and this is my first app in Rails. Let's get started! 
 

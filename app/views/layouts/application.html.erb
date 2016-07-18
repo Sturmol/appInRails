@@ -28,30 +28,31 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="page-scroll"><a href="../static_pages/index">Home</a></li>
 					<li class="page-scroll"><a href="../static_pages/shop">Shop</a></li>
+					<li class="page-scroll"><a href="../static_pages/about">About</a></li>
 					<li class="page-scroll"><a href="../static_pages/contact">Contact</a></li>
 				</ul>
 			</div><!-- navlinks -->
 		</div><!-- container -->
 	</nav><!-- nav ends -->
 
-
-
-
-
-
-
-	<nav>
-		<ul>
-			<li>Home</li>
-			<li>About</li>
-			<li>Contact</li>
-		</ul>
-	</nav>
-
-	<%= yield %>
-
-	<footer>
-		&copy; 2016 Bikes Berlin
+<%= yield %>
+	<!--FOOTER -->
+	<footer class="footer-total">
+		<div class="footer-right">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-tumblr"></i></a>
+		</div>
+		<div class="footer-left">
+			<p class="footer-links">
+				<a> <%= link_to 'Home', '/static_pages/index' %></a>
+				<a> <%= link_to 'Shop', '/static_pages/shop' %></a>
+				<a> <%= link_to 'About', '/static_pages/About' %></a>
+				<a> <%= link_to 'Contact', '/static_pages/Contact' %></a>
+			</p>
+			<p>Miguel Guelbenzu &copy; 2016</p>
+		</div>
 	</footer>
 
 </body>

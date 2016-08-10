@@ -6,7 +6,7 @@
 //Layout variables 
 $heading-font-stack: "Baloo", arial;
 $body-font-stack: "Roboto", sans-serif;
-$body-background-color: #F2E1C2;
+$body-background-color: #ebf2c2;
 $footer-background-color: #81A677; 
 $body-text-color: #697F8C;
 $hyperlink-color: #BF4E4E;
@@ -38,11 +38,11 @@ body {
 }
 
 @mixin header-item-base-style {
-	color: #BF4E4E;
+	color: $hyperlink-color;
 	display: inline-block;
 }
 
-.brand-logo {
+.brand-logo, brand-logo:visited {
 	@include header-item-base-style;
 	font-family: $heading-font-stack;
 }
@@ -56,7 +56,7 @@ body {
 	float: right;
 }
 
-.nav__list-item {
+.nav__list-item, .nav__list-item:visited {
 	@include header-item-base-style;
 	padding: 13px 10px;
 }

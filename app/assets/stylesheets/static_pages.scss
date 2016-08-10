@@ -2,102 +2,104 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Navigation page styles*/
 
-.navbar-custom {
-	boder: 0;
-	border-radius: 0;
+//Layout variables 
+$heading-font-stack: "Baloo", arial;
+$body-font-stack: "Roboto", sans-serif;
+$body-background-color: #F2E1C2;
+$footer-background-color: #81A677; 
+$body-text-color: #697F8C;
+$hyperlink-color: #BF4E4E;
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
 	margin: 0;
-	background: rgba(0, 0, 0, 0.9);
-	padding: 0;
+	height: 100%;
+	// overflow-x: hidden;
 }
 
-.navbar-custom .navbar-nav {
-	margin: 1px -15px 0;
+body {
+	background-color: $body-background-color;
+	color: $body-text-color;
+	font-family: $body-font-stack;
 }
 
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-nav > li > a {
-	font-size: 15px;
-	letter-spacing: 1px;
-	color: #fff;
+.content-wrap {
+	min-height: 100%;
+	margin-bottom: -150;
 }
 
-.navbar-custom .navbar-brand {
-	font-weight: 700;
-	font-size: 32px;
+.content-wrap:after {
+	content: "";
+	display: block;
 }
 
-.navbar-custom .nav .open > a,
-.navbar-custom .nav li a:focus {
-	background: none;
-	outline: 0;
-	color: #fff;
-}
-
-
-.navbar-custom li > a {
-	position: relative;
-}
-.navbar-custom .nav li a:hover,
-.navbar-custom .navbar-nav > li.active a {
-	background: none;
-	outline: 0;
-	color: #F5D76E;
-}
-
-.navbar-custom .navbar-toggle .icon-bar {
-	background: #fff;
-}
-
-/* Footer */
-
-.footer-total {
-	background-color: #292c2f;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	width: 100%;
-	text-align: left;
-	font: normal 16px sans-serif;
-	padding: 45px 50px;
-}
-.footer-total .footer-left p {
-	color:  #8f9296;
-	font-size: 14px;
-	margin: 0;
-}
-
-// Footer links 
-
-.footer-total p.footer-links {
-	font-size:18px;
-	font-weight: bold;
-	color:  #ffffff;
-	margin: 0 0 10px;
-	padding: 0;
-}
-
-.footer-total p.footer-links a {
-	display:inline-block;
-	line-height: 1.8;
-	text-decoration: none;
-	color:  inherit;
-}
-
-.footer-total .footer-right {
-	float: right;
-	margin-top: 6px;
-	max-width: 180px;
-}
-
-.footer-total .footer-right a {
+@mixin header-item-base-style {
+	color: #BF4E4E;
 	display: inline-block;
-	width: 35px;
-	height: 35px;
-	background-color:  #33383b;
-	border-radius: 2px;
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-	margin-left: 3px;
+}
+
+.brand-logo {
+	@include header-item-base-style;
+	font-family: $heading-font-stack;
+}
+
+.navbar-default {
+	background-color: $body-background-color;
+	border: none;
+}
+
+.nav__list {
+	float: right;
+}
+
+.nav__list-item {
+	@include header-item-base-style;
+	padding: 13px 10px;
+}
+
+.main-headline {
+	font-family: $body-font-stack;
+	font-weight: 700;
+}
+
+.sub-headline {
+	font-family: $body-font-stack; 
+}
+
+.footer, .content-wrap:after {
+	height: 150px;
+}
+
+.footer {
+	background-color: $footer-background-color;
+}
+
+@mixin footer-elements {
+	color: #D0D991;
+	padding: 120px 0 0 20px;
+}
+
+.footer__brand {
+	@include footer-elements;
+}
+
+.footer__copyright {
+	@include footer-elements;	
+	float: right;
+	margin-right: 20px;
+}
+
+.footer-link {
+	color: #F2E1C2;
+	text-decoration: none;
+}
+
+.footer-link:hover {
+	@extend .footer-link;
+	color: #D0D991;
+	transition: 800ms;
 }

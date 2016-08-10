@@ -1,21 +1,16 @@
-<p id="notice"><%= notice %></p>
+ <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Browse Bikes</h1>
+      </div>
+    </div>
+ </div>
 
-<h1>Listing Products</h1>
+  <div class="container">
+    <div class="row">
+      <% cache(cache_key_for_products) do %>
+        <%= render @products %>
+      <% end -%>
+    </div>
+ </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-          <h1><%= product.name %></h1>
-         <p><%= product.description %></p>
-          <p><%= product.colour %></p>
-        <strong><%= product.price%></strong>
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-      </div><!-- /col -->
-    <% end %>
-  </div>
-</div>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>

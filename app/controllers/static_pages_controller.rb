@@ -1,19 +1,24 @@
 class StaticPagesController < ApplicationController
+  # layout "static"
+
   def index
   end
-  def landing_page
-  	#redirect_to static_pages_index_path
-  	@featured_product = Product.first
-  	@product = Product.limit(5)
-  end
+
+  def contact
+	end
 
   def thank_you
- 	  @name = params[:name]
- 	  @email = params[:email]
- 	  @message = params[:message]
- 	  ActionMailer::Base.mail(:from => @email,
- 	      :to => 'your-email@example.com',
- 	      :subject => "A new contact form message from #{@name}",
- 	      :body => @message).deliver_now
- 	end
+  @name = params[:name]
+  @email = params[:email]
+  @message = params[:message]
+  ActionMailer::Base.mail(:from => @email,
+      :to => 'your-email@example.com',
+      :subject => "A new contact form message from #{@name}",
+      :body => @message).deliver_now
+  end
+
+  def landing_page
+  	@featured_product = Product.first
+  	@products = Product.limit(3)
+  end
 end

@@ -1,16 +1,12 @@
- <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Browse Bikes</h1>
-      </div>
-    </div>
- </div>
+<h1>Listing products</h1>
+<div class="container-fluid">
+  <div class="row">
+    <%= render @products %>
+  </div>
+</div>
 
-  <div class="container">
-    <div class="row">
-      <% cache(cache_key_for_products) do %>
-        <%= render @products %>
-      <% end -%>
-    </div>
- </div>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
 

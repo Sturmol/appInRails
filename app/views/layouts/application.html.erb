@@ -1,62 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bikeshop</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-	<!-- Fonts -->
-	<link href="//fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%= csrf_meta_tags %>
+  <title>Bike Berlin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
 </head>
-<body>
 
-<!-- Navigation -->
-<div class="content-wrap">
-  <header class="header">
+<body>
+<div class="page-wrap">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-6"><%= link_to "Sturmol's Bikes Berlin", static_pages_index_path, :class => "h2 brand-logo" %></div>
-        <nav class="col-xs-6 navbar default-navbar">
-          <div class="nav__search">  
-              <%= form_tag( "/products", method: "get") do %>
-              <%= label_tag(:q, "Search") %>
-              <%= text_field_tag(:q) %>
-              <%= submit_tag("Search") %>
-            <% end %>
-          </div>  
-          <ul class="nav__list h4">
-            <li class="nav__list-item"><%= link_to "Home", static_pages_index_path %></li>
-            <li class="nav__list-item"><%= link_to "Our Story", static_pages_about_path %></li>
-	        <li class="nav__list-item"><%= link_to "Contact Us", static_pages_contact_path %></li>
-          </ul>
-        </nav>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Biking around Berlin</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="../products/index.html.erb">Products</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
       </div>
     </div>
-  </header>
-
-	<%= yield %>
-	</div>
-	<!--FOOTER -->
-<footer class="footer">
-  <div class="container-fluid">	
-    <div class="row">
-      <div class="col-xs-6">
-        <p class="footer__brand">Made in Berlin by <a class="footer-link" href="http://www.sturmol.com">Miguel Guelbenzu</a></p>
-      </div> 
-      <div class="col-xs-6">
-        <p class="footer__copyright">&copy; 2016 Sturmol Web Development</p>
-      </div>      
-    </div>
-  </div> 
-</footer>
-
-
-
+  </nav>
+</div>
+<%= yield %>
+<footer class="site-footer">&copy;2016 Bike Berlin</footer>
 </body>
 </html>

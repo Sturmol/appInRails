@@ -1,26 +1,26 @@
-<div class="container">
-	<h2>Featured Products</h2>
-</div>
-
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @products.each do |product| %>
-     <li data-target="#carousel-example-generic" data-slide-to="<%= @products.index %>" class="<%= "active" if product == @products.first %>"></li>
-    <% end %><!--  end do loop -->
+    <% @products.each_with_index do |product, i| %>
+      <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
+    <% end %>
   </ol>
 
+  <div class="featured-product">
+  <h2>Featured Product:</h2>
+  <%= @featured_product.name %>
+  </div>
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
-	    <div class="item <%= "active" if product == @products.first %>">
-	      <%= image_tag(product.image_url)%>
+	    <div class="item<%= " active" if product == @products.first %>">
+	      <%= image_tag(product.image_url) %>
 	      <div class="carousel-caption">
-	      	<%= product.name %>
-	      </div><!-- end carousel caption -->
-	    </div><!-- end item active -->
-    <% end %><!--  end do loop -->
-  </div><!-- end carousel-inner -->
+	        <p><%= product.name %></p>
+	      </div>
+	    </div>
+	  <% end %>
+  </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -32,3 +32,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+
